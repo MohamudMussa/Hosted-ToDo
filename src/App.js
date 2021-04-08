@@ -1,24 +1,36 @@
 
 import './App.css';
 import React, { useState, useEffect } from 'react'
-
+import axios from 'axios'
 function App() {
 
-  const [todos, setTodos] = useState(['Help', 'B', 'C', 'D', 'E']);
+  const [todos, setTodos] = useState(['Hello', 'Come', 'Here'])
+  const [ayah, setAyah] = useState('')
+
+  const url = 'https://api.quran.com/api/v4/verses/random?language=en&words=true'
+  useEffect(() => {
+    axios.get()
+      .then(response => response.data)
+    setAyah(response.data)
+  })
 
   return (
     <div className="App">
-      <h1> HELLO WORLD </h1>
-      <input onChange={setTodos} />
-      <button> Add a Task </button>
+
+      <h1> Todo App </h1>
+
+      <input
+
+
+      />
+      <button>Add Task</button>
+
       <ul>
-        {todos.map(todo => (
-          <li key={todo.id}> {todo} </li>
-        ))}
-        <li></li>
+
 
 
       </ul>
+
     </div>
   );
 }
