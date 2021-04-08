@@ -26,7 +26,7 @@ function App() {
     //adds to the database, so simple and beautiful
     db.collection('todos').add({
       task: input,
-      timeStamp: new Date
+      timeStamp: firebase.firestore.FieldValue.serverTimestamp()
     })
     setInput('')
   }
