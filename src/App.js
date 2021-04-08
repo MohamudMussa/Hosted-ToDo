@@ -15,13 +15,17 @@ function App() {
 
   useEffect(() => {
     db.collection('todos').onSnapshot(snapshot => {
-      setTodos(snapshot.docs.map(doc => doc.data().todo));
+      setTodos(snapshot.docs.map(doc => doc.data().task));
     })
-  })
+  }, [])
 
   const addTodos = (event) => {
     event.preventDefault()
-    setTodos([...todos, input])
+
+    //adds to the database, so simple and beautiful
+    db.collection('todos').add({
+      task: input
+    })
     setInput('')
   }
 
