@@ -3,6 +3,7 @@ import './App.css';
 import React, { useState, useEffect } from 'react'
 import Todo from './Components/Todo';
 import db from './Database/firebase'
+import firebase from 'firebase'
 
 function App() {
 
@@ -24,7 +25,8 @@ function App() {
 
     //adds to the database, so simple and beautiful
     db.collection('todos').add({
-      task: input
+      task: input,
+      timeStamp: new Date
     })
     setInput('')
   }
