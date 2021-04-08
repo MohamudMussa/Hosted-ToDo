@@ -1,12 +1,23 @@
 
 import './App.css';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Todo from './Components/Todo';
+import db from './Database/firebase'
 
 function App() {
 
-  const [todos, setTodos] = useState(['Help', 'Me', 'Code'])
+  //when the app loads
+  //we need to listen to the database changes
+  //then fetch new databases info 
+
+  const [todos, setTodos] = useState([''])
   const [input, setInput] = useState([''])
+
+  useEffect(() => {
+    db.collection('todos').onSnapshot(snapshot => {
+      setTodos(snapshot.docs.map(doc => doc.data().todo));
+    })
+  })
 
   const addTodos = (event) => {
     event.preventDefault()

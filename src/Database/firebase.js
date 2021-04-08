@@ -3,7 +3,7 @@ import firebase from 'firebase';
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 
-const firebaseApp = firebase.initalizeApp({
+const firebaseApp = firebase.initializeApp({
     apiKey: "AIzaSyBiHOIothN_9jLcuUbCmyC-UswXWtXAbX4",
     authDomain: "todolist-f6938.firebaseapp.com",
     projectId: "todolist-f6938",
