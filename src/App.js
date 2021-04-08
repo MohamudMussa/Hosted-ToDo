@@ -9,9 +9,10 @@ function App() {
 
   const url = 'https://api.quran.com/api/v4/verses/random?language=en&words=true'
   useEffect(() => {
-    axios.get()
-      .then(response => response.data)
-    setAyah(response.data)
+    axios.get(url)
+      .then(response => {
+        setAyah(response.data)
+      })
   })
 
   return (
