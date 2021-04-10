@@ -1,3 +1,16 @@
+# ToDo App made with React 🤖, FireBase 🔥 & Material UI 🎨
+
+-  React Components & Hooks
+-  Firebase database with full CRUD functionality
+-  Material UI to make it look simple and nice. 
+
+
+See the live website here - [Minimal To Do App](https://github.com/facebook/create-react-app).
+
+
+This project was fun and I learnt a lot creating this FullStack web app. 
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
