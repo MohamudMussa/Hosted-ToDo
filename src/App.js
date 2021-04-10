@@ -6,7 +6,7 @@ import db from './Database/firebase'
 import firebase from 'firebase'
 import { TextField, Container, Button, Grid } from '@material-ui/core';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
-import main from './Images/main.svg'
+
 import Footer from './Components/Footer';
 
 
