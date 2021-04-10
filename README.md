@@ -1,4 +1,4 @@
-#ToDo App made with React 🤖, FireBase 🔥 & Material UI 🎨
+# ToDo App made with React 🤖, FireBase 🔥 & Material UI 🎨
 
 -React Components & Hooks
 -Firebase database with full CRUD functionality
