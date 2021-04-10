@@ -4,6 +4,10 @@ import React, { useState, useEffect } from 'react'
 import Todo from './Components/Todo';
 import db from './Database/firebase'
 import firebase from 'firebase'
+import { TextField, Container, Button, Grid } from '@material-ui/core';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
+
+
 
 function App() {
 
@@ -16,7 +20,7 @@ function App() {
 
   useEffect(() => {
     db.collection('todos').orderBy('timeStamp', 'desc').onSnapshot(snapshot => {
-      setTodos(snapshot.docs.map(doc => doc.data().task));
+      setTodos(snapshot.docs.map(doc => ({ id: doc.id, todo: doc.data().task })));
     })
   }, [])
 
@@ -32,30 +36,61 @@ function App() {
   }
 
   return (
-    <div className="App">
 
-      <h1> Todo App </h1>
-      <form >
-        <input
-          name="tasks"
-          value={input}
-          onChange={event => setInput(event.target.value)}
-        />
+    <Container maxWidth="sm" className="center">
 
-        <button
-          type="submit"
-          onClick={addTodos}
-        >
 
-          Add Task</button>
+      <h1 className="title"> Minimal ToDo App </h1>
+      <h2> Made with React 🤖, FireBase 🔥 & Material UI 🎨 </h2>
 
-        <ul>
+      <Grid container spacing={2}>
+
+
+        <Grid item xs={6}>
+          <form >
+            <TextField
+
+              id="filled-full-width"
+              value={input}
+              onChange={event => setInput(event.target.value)}
+              placeholder="Enter your Todos here  😃"
+              fullWidth
+              style={{ paddingBottom: "11px", paddingLeft: "2vmin" }}
+
+              variant="filled"
+
+            />
+          </form>
+
+
+        </Grid>
+        <Grid item xs={6}>
+          <Button variant="contained"
+            className="size"
+            size="large"
+            type="submit"
+            onClick={addTodos}
+            startIcon={<AddCircleIcon />}
+            style={{ width: "25vmin" }}
+          >Add Task 🚀 </Button>
+
+        </Grid>
+
+
+        <ul className="list" >
           {todos.map(todo => (
-            <Todo text={todo} />
+            <Todo todo={todo} />
           ))}
         </ul>
-      </form>
-    </div>
+
+
+
+
+
+
+      </Grid>
+    </Container>
+
   );
 }
 
