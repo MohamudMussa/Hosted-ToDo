@@ -37,12 +37,12 @@ const Todo = (props) => {
         </Grid>
   
         </Grid>
-             
+      
 
         </div>
 
 
- 
+
     )
 }
 

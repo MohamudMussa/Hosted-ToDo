@@ -6,6 +6,9 @@ import db from './Database/firebase'
 import firebase from 'firebase'
 import { TextField, Container, Button, Grid } from '@material-ui/core';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
+import main from './Images/main.svg'
+import Footer from './Components/Footer';
+
 
 
 
@@ -37,11 +40,14 @@ function App() {
 
   return (
 
+
+
     <Container maxWidth="sm" className="center">
 
 
       <h1 className="title"> Minimal ToDo App </h1>
       <h2> Made with React 🤖, FireBase 🔥 & Material UI 🎨 </h2>
+
 
       <Grid container spacing={2}>
 
@@ -89,7 +95,11 @@ function App() {
 
 
       </Grid>
+      <Footer />
     </Container>
+
+
+
 
   );
 }
